@@ -1,19 +1,19 @@
-//
-//  LandmarkList.swift
-//  Landmarks
-//
-//  Created by 조성민 on 2023/03/29.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view showing a list of landmarks.
+*/
 
 import SwiftUI
 
 struct LandmarkList: View {
     var body: some View {
-        NavigationView{
-            List (landmarks){landmark in
-                NavigationLink{
+        NavigationView {
+            List(landmarks) { landmark in
+                NavigationLink {
                     LandmarkDetail(landmark: landmark)
-                }label: {
+                } label: {
                     LandmarkRow(landmark: landmark)
                 }
             }
@@ -28,5 +28,6 @@ struct LandmarkList_Previews: PreviewProvider {
             LandmarkList()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
-        }    }
+        }
+    }
 }
